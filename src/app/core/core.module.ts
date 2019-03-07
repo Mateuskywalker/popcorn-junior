@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { HeaderComponent } from './header/header.component';
 import { RequestInterceptor } from './auth/request.interceptor';
+import { SignUpService } from './signup/signup.service';
+import { SerieService } from './series/serie.service';
 
 @NgModule({
     declarations: [HeaderComponent],
@@ -13,6 +16,8 @@ import { RequestInterceptor } from './auth/request.interceptor';
         RouterModule
     ], 
     providers: [
+        SignUpService,
+        SerieService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: RequestInterceptor,

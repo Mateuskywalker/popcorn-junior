@@ -1,1 +1,10 @@
-<img class="img-thumbnail" [src]="url" [alt]="description">
+<div class="d-flex flex-row row justify-content-center">
+        <label *ngFor="let serie of series">
+          <div (click)="trasSerieDetalhada(serie.imdb_id)" class="container-imagem" id="{{serie.title}}">
+              <img src="{{serie.images.poster}}" class="imagem" appZoomOnHover>
+          </div>
+      </label>
+      </div>
+      <button class="load btn btn-primary" (click)="loadMoreMethod()" type="button">Load More</button>
+      
+      

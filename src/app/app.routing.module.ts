@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NotFoundComponent } from './errors/not-found/not-found.component';
-import { SerieComponent } from './series/serie/serie.component';
+import { SeriesComponent } from './series/series.component';
 // import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 
 const routes: Routes = [
@@ -17,7 +17,7 @@ const routes: Routes = [
     },              
     { 
         path: 'series', 
-        component: SerieComponent,
+        component: SeriesComponent,
         // resolve: {
         //     photos: PhotoListResolver
         // }

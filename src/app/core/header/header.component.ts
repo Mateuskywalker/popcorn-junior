@@ -5,7 +5,7 @@ import { User } from '../user/user';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'ap-header',
+    selector: 'app-header',
     templateUrl: './header.component.html'
 })
 export class HeaderComponent { 

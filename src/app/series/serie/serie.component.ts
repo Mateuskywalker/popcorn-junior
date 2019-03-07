@@ -1,12 +1,26 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+// import { SerieItem } from '../../models/serieItem.model';
 
 @Component({
-    selector: 'ap-photo',
-    templateUrl: 'serie.component.html'
+  selector: 'app-serie',
+  templateUrl: './serie.component.html'
 })
-export class SerieComponent {
-    
-    @Input() description='';
-    
-    @Input() url='';
+export class SerieComponent implements OnInit {
+
+  @Input() series: any[] = [];
+  @Output() dados = new EventEmitter();
+  @Output() loadMore = new EventEmitter();
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  loadMoreMethod() {
+    this.loadMore.emit(true);
+  }
+
+  trasSerieDetalhada(id: string) {
+    this.dados.emit(id);
+  }
 }

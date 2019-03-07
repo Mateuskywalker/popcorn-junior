@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NewUser } from './new-user';
+import { NewUser } from '../models/new-user';
 
 const API_URL = "http://localhost:3000";
 
