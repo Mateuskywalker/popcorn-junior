@@ -1,11 +1,10 @@
 <div class="container-series">
-    <div class="d-flex flex-row row justify-content-center series">
+    <div class="d-flex flex-row row justify-content-center">
         <div *ngFor="let serie of series">
             <div (click)="trasSerieDetalhada(serie.imdb_id)" 
                 class="containerimagem containerblack" id="{{serie.title}}"
-                [@serieAppeared]="seriesState"
-            >
-                <img src="{{serie.images.poster}}" class="imagem imagem-transition" appZoomOnHover>
+                [@serieAppeared]="seriesState">
+                <img src="{{serie.images.poster}}" class="imagem imagem-transition shadow" appZoomOnHover>
             </div>
         </div>
     </div>
