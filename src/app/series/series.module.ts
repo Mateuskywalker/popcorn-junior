@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { SerieModule } from './serie/serie.module';
+import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { ZoomOnHoverModule } from '../shared/directives/zoom-on-hover/zoom-on-hover.module';
+
+import { SerieModule } from './serie/serie.module';
 import { SeriesComponent } from './series.component';
 import { InputModule } from '../shared/components/input/input.module';
 import { FilterByNameModule } from '../shared/pipes/filter-by-name.module';
-import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import { BrowserModule } from '@angular/platform-browser';
         BrowserModule,
         SerieModule,
         InputModule,
-        FilterByNameModule
+        FilterByNameModule,
+        BrowserAnimationsModule
     ]
 })
 export class SeriesModule {}
