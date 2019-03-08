@@ -1,5 +1,5 @@
 <app-input (value)="setInputValue($event)" #input></app-input>
 
-<div class="controle">
+<div class="series-parent">
     <app-serie [series]="seriesIndividuais | FilterByName: value" (loadMore)="loadMoreMethod($event)" (dados)="trasSerieDetalhada($event)"></app-serie>
 </div>

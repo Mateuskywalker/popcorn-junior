@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { SeriesComponent } from './series/series.component';
+import { SerieResolver } from './core/series/serie.resolver';
 // import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 
 const routes: Routes = [
@@ -18,9 +19,9 @@ const routes: Routes = [
     { 
         path: 'series', 
         component: SeriesComponent,
-        // resolve: {
-        //     photos: PhotoListResolver
-        // }
+        resolve: {
+            series: SerieResolver
+        }
     },
     { 
         path: '**', 

@@ -1,10 +1,13 @@
-<div class="d-flex flex-row row justify-content-center">
-        <label *ngFor="let serie of series">
-          <div (click)="trasSerieDetalhada(serie.imdb_id)" class="container-imagem" id="{{serie.title}}">
-              <img src="{{serie.images.poster}}" class="imagem" appZoomOnHover>
-          </div>
-      </label>
-      </div>
-      <button class="load btn btn-primary" (click)="loadMoreMethod()" type="button">Load More</button>
+<div class="container-series">
+    <div class="d-flex flex-row row justify-content-center series">
+        <div *ngFor="let serie of series">
+            <div (click)="trasSerieDetalhada(serie.imdb_id)" class="containerimagem" id="{{serie.title}}">
+                <img src="{{serie.images.poster}}" class="imagem" appZoomOnHover>
+            </div>
+        </div>
+    </div>
+    <button class="load btn btn-primary" (click)="loadMoreMethod()" type="button">Load More</button>
+</div>
+
       
       

@@ -1,0 +1,31 @@
+@import '../../../styles/abstracts/functions';
+
+.container-series{
+    display: flex;
+    flex-flow: column;
+    >.series{
+        .containerimagem{
+            background-color: black;
+            display: flex;
+            flex-flow: row;
+            position: relative;
+            top: get-vw-desktop(100px);
+            margin-right: get-vw-desktop(20px);
+            margin-top: get-vw-desktop(10px);
+            margin-bottom: get-vw-desktop(10px);
+        
+            >.imagem{
+                width: get-vw-desktop(200px);
+                height: get-vw-desktop(350px);
+                position: relative;
+                transition: color 1s ease-out;
+                cursor:pointer;
+            }
+        }
+    }
+
+    .load{
+        z-index: 1000;
+    }
+}
+

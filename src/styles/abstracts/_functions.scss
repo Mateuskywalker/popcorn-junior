@@ -1,0 +1,14 @@
+@function get-vw-desktop($value) {
+    $result: $value/ ((1440 * 0.01) * 1px) * 1vw;
+    @return $result;
+}
+
+@function get-vw-tablet($value){
+    $result: $value/ ((768 * 0.01) * 1px) * 1vw;
+    @return $result;
+}
+
+@function get-vw-mobile($value){
+    $result: $value/ ((375 * 0.01) * 1px) * 1vw;
+    @return $result;
+}
