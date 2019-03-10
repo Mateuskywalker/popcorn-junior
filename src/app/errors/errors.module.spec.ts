@@ -7,7 +7,7 @@ describe('ErrorsModule', () => {
     errorsModule = new ErrorsModule();
   });
 
-  it('should create an instance', () => {
+  it('deve ser criado uma instancia de ErrorsModule', () => {
     expect(errorsModule).toBeTruthy();
   });
 });

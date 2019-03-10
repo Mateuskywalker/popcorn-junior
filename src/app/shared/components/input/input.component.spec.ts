@@ -19,7 +19,7 @@ describe('InputComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('input componente deve ser criado', () => {
     expect(component).toBeTruthy();
   });
 });
