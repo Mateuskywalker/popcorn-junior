@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { map, tap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import { tap } from 'rxjs/operators';
 
 import { SerieService } from '../core/series/serie.service';
 
@@ -12,9 +12,7 @@ export class SeriesComponent implements OnInit {
 
   @Input() displayAnchor = false;
 
-  log: any[] = [];
   value: any = '';
-  public seriesMarcadas: any = [];
   public seriesIndividuais: any[] = [];
   private loadMore = false;
   private counterLoader = 1;
@@ -26,6 +24,7 @@ export class SeriesComponent implements OnInit {
   constructor(
     private serieService: SerieService,
     private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -40,8 +39,7 @@ export class SeriesComponent implements OnInit {
     const id = $event;
     this.serieService.SerieDetalhada(id)
     .subscribe(serie => {
-      console.log(serie);
-      this.seriesMarcadas.push(serie);
+      this.router.navigate(['series', serie.imdb_id])
     });
   }
 

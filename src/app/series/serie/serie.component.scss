@@ -1,4 +1,5 @@
 @import '../../../styles/abstracts/functions';
+@import '../../../styles/abstracts/variables';
 
 .container-series{
     display: flex;
@@ -24,11 +25,15 @@
     }
 
     .containerblack{
-        background-color: black;
+        background-color: $background-imagem;
     }
 
     .load{
         z-index: 1000;
+
+        &.-hidden{
+            display: none;
+        }
     }
 }
 

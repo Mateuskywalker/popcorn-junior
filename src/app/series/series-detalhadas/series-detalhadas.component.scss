@@ -1,0 +1,66 @@
+@import '../../../styles/abstracts/functions';
+@import '../../../styles/abstracts/variables';
+
+.container-detalhada{
+    display: flex;
+    justify-content: space-between;
+    height: get-vw-desktop(500px);
+    padding-left: get-vw-desktop(100px);
+
+    >.imagem{
+        width:  get-vw-desktop(50px);
+        height:  get-vw-desktop(500px);
+    }
+
+    .detalhes{
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        .title{
+            &.-titleseriered{
+                color: $title-seriedetalhada-red;
+            }
+    
+            &.-titleserieblack{
+                color: $title-seriedetalhada-black;
+            }
+        }
+
+        .sinopse{
+            width: get-vw-desktop(400px);
+        }
+
+        .numbers{
+            display: flex;
+            justify-content: space-between;
+            width: get-vw-desktop(450px);
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .container-detalhada{
+        display: flex;
+        justify-content: center;
+        height: get-vw-desktop(500px);
+        padding-left: get-vw-desktop(100px);
+    
+        >.imagem{
+            width:  get-vw-desktop(500px);
+            height:  get-vw-desktop(500px);
+        }
+    
+        .detalhes{
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            >.sinose{
+                width: get-vw-desktop(300px);
+            }
+        }
+    }
+}

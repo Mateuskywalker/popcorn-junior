@@ -18,6 +18,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class SerieComponent implements OnInit {
 
   @Input() series: any[] = [];
+  @Input() inputValue: string = '';
   @Output() dados = new EventEmitter();
   @Output() loadMore = new EventEmitter();
 

@@ -4,17 +4,17 @@ import { AuthService } from './auth.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { UserService } from '../user/user.service';
 
-describe('AuthService', () => { 
+describe('AuthService', () => {
 
   function setup() {
-   
+
     const httpClientController: HttpTestingController = TestBed.get(HttpTestingController);
     const userService = TestBed.get(UserService);
     const authService = TestBed.get(AuthService);
 
     return {  httpClientController, authService, userService };
   }
-  
+
   beforeEach(() => {
     const userService = jasmine.createSpyObj('UserService', ['setToken']);
     TestBed.configureTestingModule({
@@ -39,7 +39,7 @@ describe('AuthService', () => {
   it('should authenticate and set user token', () => {
 
     const {userService, httpClientController, authService} = setup();
-    
+
     authService.authenticate('asdkjahskd', 'sjdjasdk').subscribe(() => {
       expect(userService.setToken).toHaveBeenCalledWith('1234567890');
     });
@@ -55,11 +55,17 @@ describe('AuthService', () => {
 
   it('should use method POST on URL API', () => {
     const {userService, httpClientController, authService} = setup();
-    
+
     authService.authenticate('asdkjahskd', 'sjdjasdk').subscribe(() => {
       userService.setToken('1234567890');
-      const testResquest = httpClientController.expectOne('http://localhost:3000/user/login');
       expect(testResquest.request.method).toBe('POST');
+    });
+    const testResquest = httpClientController.expectOne('http://localhost:3000/user/login');
+
+    testResquest.flush(null, {
+      headers: {
+        'x-access-token': '1234567890'
+      }
     });
   });
 });

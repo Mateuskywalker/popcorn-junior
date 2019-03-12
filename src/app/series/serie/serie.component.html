@@ -8,7 +8,10 @@
             </div>
         </div>
     </div>
-    <button class="load btn btn-primary" (click)="loadMoreMethod()" type="button">Load More</button>
+    <button class="load btn btn-primary"
+            (click)="loadMoreMethod()"
+            type="button"
+            [ngClass]="{'-hidden': inputValue != ''}">Load More</button>
 </div>
 
       

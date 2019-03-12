@@ -1,7 +1,7 @@
 import { SerieResolver } from "./serie.resolver";
 import { Observable, of } from 'rxjs';
 
-fdescribe('SerieResolver', () =>  {
+describe('SerieResolver', () =>  {
 
     let serieService;
     let serieResolver: SerieResolver;

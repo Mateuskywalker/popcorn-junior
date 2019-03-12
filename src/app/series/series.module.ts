@@ -7,6 +7,7 @@ import { SerieModule } from './serie/serie.module';
 import { SeriesComponent } from './series.component';
 import { InputModule } from '../shared/components/input/input.module';
 import { FilterByNameModule } from '../shared/pipes/filter-by-name.module';
+import { SeriesDetalhadasModule } from './series-detalhadas/series-detalhadas.module';
 
 @NgModule({
     declarations: [
@@ -15,6 +16,7 @@ import { FilterByNameModule } from '../shared/pipes/filter-by-name.module';
     imports: [ 
         BrowserModule,
         SerieModule,
+        SeriesDetalhadasModule,
         InputModule,
         FilterByNameModule,
         BrowserAnimationsModule

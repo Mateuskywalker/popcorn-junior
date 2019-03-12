@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { SeriesComponent } from './series/series.component';
 import { SerieResolver } from './core/series/serie.resolver';
+import { SeriesDetalhadasComponent } from './series/series-detalhadas/series-detalhadas.component';
 
 const routes: Routes = [
     {
@@ -21,6 +22,10 @@ const routes: Routes = [
         resolve: {
             series: SerieResolver
         }
+    },
+    {
+        path: 'series/:idserie',
+        component: SeriesDetalhadasComponent
     },
     { 
         path: '**', 

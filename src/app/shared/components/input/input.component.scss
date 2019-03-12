@@ -1,4 +1,5 @@
 @import '../../../../styles/abstracts/functions';
+@import '../../../../styles/abstracts/variables';
 
 .input-filter{
     display: flex;
@@ -7,16 +8,25 @@
         position: fixed;
         z-index: 1000;
         width:  get-vw-desktop(1300px);
-        height:  get-vw-desktop(50px);
+        height: get-vw-desktop(50px);
         border: get-vw-desktop(2px) solid black;
-        border-radius: get-vw-desktop(5px);
-        font-size: 16pt;
         font-family: 'Sunflower', sans-serif;
-        border-color: #642EFE;
-        color: #642EFE;
+
+        &.-filtersize16pt{
+            font-size: 16pt;
+        }
+
+        &.-filtercolorgreen{
+            border-color: $border-color;
+            color: $border-color;
+        }
+
+        &.-filterborderadius{
+            border-radius: get-vw-desktop(5px);
+        }
 
         &:hover{
-            border-color: #A901DB;
+            border-color: $hover;
         }
     }
 }
