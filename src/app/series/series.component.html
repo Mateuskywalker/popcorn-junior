@@ -4,9 +4,9 @@
 </app-input>
 
 <div class="series-parent">
-    <app-serie [series]="seriesIndividuais | FilterByName: value" 
+    <app-serie [series]="indivualshows | FilterByName: value" 
                (loadMore)="loadMoreMethod($event)"
                [inputValue]="value"
-               (dados)="trasSerieDetalhada($event)">
+               (dados)="getDetails($event)">
     </app-serie>
 </div>

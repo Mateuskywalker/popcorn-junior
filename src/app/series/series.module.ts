@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
-
-import { SerieModule } from './serie/serie.module';
 import { SeriesComponent } from './series.component';
 import { InputModule } from '../shared/components/input/input.module';
 import { FilterByNameModule } from '../shared/pipes/filter-by-name.module';
-import { SeriesDetalhadasModule } from './series-detalhadas/series-detalhadas.module';
+import { ZoomOnHoverModule } from '../shared/directives/zoom-on-hover/zoom-on-hover.module';
+import { SeriesDetalhadasComponent } from './details/details.component';
+import { SerieComponent } from './serie/serie.component';
 
 @NgModule({
     declarations: [
-        SeriesComponent
+        SeriesComponent,
+        SeriesDetalhadasComponent,
+        SerieComponent
     ],
-    imports: [ 
+    imports: [
         BrowserModule,
-        SerieModule,
-        SeriesDetalhadasModule,
+        HttpClientModule,
+        ZoomOnHoverModule,
         InputModule,
         FilterByNameModule,
         BrowserAnimationsModule

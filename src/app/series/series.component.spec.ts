@@ -6,7 +6,6 @@ import { SeriesComponent } from './series.component';
 import { SerieService } from '../core/series/serie.service';
 import { InputModule } from '../shared/components/input/input.module';
 import { FilterByNameModule } from '../shared/pipes/filter-by-name.module';
-import { SerieModule } from './serie/serie.module';
 
 
 xdescribe('Series Component', () => {
@@ -27,7 +26,7 @@ xdescribe('Series Component', () => {
             declarations: [
             SeriesComponent
             ],
-            imports: [ InputModule, SerieModule , FilterByNameModule, RouterTestingModule ],
+            imports: [ InputModule, FilterByNameModule, RouterTestingModule ],
             providers: [ {provide: ActivatedRoute, useValue: fakeActivatedRoute} ]
         }).compileComponents();
     }));

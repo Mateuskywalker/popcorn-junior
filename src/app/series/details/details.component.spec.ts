@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeriesDetalhadasComponent } from './series-detalhadas.component';
+import { SeriesDetalhadasComponent } from './details.component';
 
 xdescribe('SeriesDetalhadaComponent', () => {
   let component: SeriesDetalhadasComponent;

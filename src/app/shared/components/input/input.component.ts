@@ -8,19 +8,19 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class InputComponent implements OnInit {
 
   valor: string;
-  @Output() value = new EventEmitter;
+  @Output() value = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
 
   onKey(event: KeyboardEvent) {
-    this.valor = (<HTMLInputElement>event.target).value;
+    this.valor = (event.target as HTMLInputElement).value;
     let temp: string;
 
     if (this.valor !== temp) {
       temp = this.valor;
-      this.value.emit((<HTMLInputElement>event.target).value);
+      this.value.emit((event.target as HTMLInputElement).value);
     }
   }
 }

@@ -13,11 +13,11 @@ export class SeriesComponent implements OnInit {
   @Input() displayAnchor = false;
 
   value: any = '';
-  public seriesIndividuais: any[] = [];
+  public indivualshows: any[] = [];
   private loadMore = false;
   private counterLoader = 1;
 
-  paginasComSeries: any[] = this.activatedRoute.snapshot.data['series'];
+  pagesWithSeries: any[] = this.activatedRoute.snapshot.data.series;
 
   @ViewChild('input') inputDOM: HTMLElement;
 
@@ -28,39 +28,39 @@ export class SeriesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.imprimeTodasAsSeries();
+    this.showShows();
   }
 
   setInputValue(serieTitle: string) {
     this.value = serieTitle;
   }
 
-  trasSerieDetalhada($event) {
+  getDetails($event) {
     const id = $event;
-    this.serieService.SerieDetalhada(id)
+    this.serieService.details(id)
     .subscribe(serie => {
-      this.router.navigate(['series', serie.imdb_id])
+      this.router.navigate(['series', serie.imdb_id]);
     });
   }
 
-  imprimeTodasAsSeries(): void {
-    if(this.loadMore) {
+  showShows(): void {
+    if (this.loadMore) {
       ++this.counterLoader;
 
-    this.serieService.StringPaginas().pipe(
+      this.serieService.pages().pipe(
       tap(paginas => {
         paginas.forEach(pagina => {
-        this.serieService.SeriesPorPaginas(pagina)
-          .subscribe(paginasserie => {
-            this.seriesIndividuais = this.seriesIndividuais.concat(paginasserie[this.counterLoader])
+          this.serieService.shows(pagina)
+            .subscribe(paginasserie => {
+              this.indivualshows = this.indivualshows.concat(paginasserie[this.counterLoader]);
           });
         });
       })
     ).subscribe();
 
     } else {
-      this.paginasComSeries.forEach(paginaserie => {
-        this.seriesIndividuais.push(paginaserie);
+      this.pagesWithSeries.forEach(paginaserie => {
+        this.indivualshows.push(paginaserie);
       });
     }
   }
@@ -68,6 +68,6 @@ export class SeriesComponent implements OnInit {
 
   loadMoreMethod($event) {
     this.loadMore = $event;
-    this.imprimeTodasAsSeries();
+    this.showShows();
   }
 }

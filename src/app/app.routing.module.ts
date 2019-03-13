@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { SeriesComponent } from './series/series.component';
 import { SerieResolver } from './core/series/serie.resolver';
-import { SeriesDetalhadasComponent } from './series/series-detalhadas/series-detalhadas.component';
+import { SeriesDetalhadasComponent } from './series/details/details.component';
 
 const routes: Routes = [
     {
@@ -12,12 +12,12 @@ const routes: Routes = [
         pathMatch: 'full',
         redirectTo: 'home'
     },
-    { 
+    {
         path: 'home',
         loadChildren: './home/home.module#HomeModule'
-    },              
-    { 
-        path: 'series', 
+    },
+    {
+        path: 'series',
         component: SeriesComponent,
         resolve: {
             series: SerieResolver
@@ -27,15 +27,15 @@ const routes: Routes = [
         path: 'series/:idserie',
         component: SeriesDetalhadasComponent
     },
-    { 
-        path: '**', 
-        component: NotFoundComponent 
-    }  
+    {
+        path: '**',
+        component: NotFoundComponent
+    }
 ];
 
 @NgModule({
-    imports: [ 
-        RouterModule.forRoot(routes, { useHash: true } ) 
+    imports: [
+        RouterModule.forRoot(routes, { useHash: true } )
     ],
     exports: [ RouterModule ]
 })

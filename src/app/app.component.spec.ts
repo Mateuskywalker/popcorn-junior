@@ -10,7 +10,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      imports:[
+      imports: [
         CoreModule,
         RouterTestingModule
       ]

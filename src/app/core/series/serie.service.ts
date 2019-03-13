@@ -9,15 +9,15 @@ export class SerieService {
 
     constructor(private http: HttpClient) {}
 
-    public StringPaginas(): Observable<any> {
+    public pages(): Observable<any> {
         return this.http.get('https://tv-v2.api-fetch.website/shows');
     }
 
-    public SeriesPorPaginas(pagina: string): Observable<any> {
+    public shows(pagina: string): Observable<any> {
             return this.http.get(`https://tv-v2.api-fetch.website/${pagina}?sort=name&order=1`);
     }
 
-    public SerieDetalhada(imdb_id: string): Observable<any> {
-        return this.http.get<any>(`https://tv-v2.api-fetch.website/show/${imdb_id}`);
+    public details(imdbid: string): Observable<any> {
+        return this.http.get<any>(`https://tv-v2.api-fetch.website/show/${imdbid}`);
     }
 }
